@@ -99,9 +99,11 @@
 #else
       _controller.modalPresentationStyle = UIModalPresentationFullScreen;
 #endif
+      _controller.modalPresentationCapturesStatusBarAppearance = YES;
       break;
     case RNSScreenStackPresentationFullScreenModal:
       _controller.modalPresentationStyle = UIModalPresentationFullScreen;
+      _controller.modalPresentationCapturesStatusBarAppearance = YES;
       break;
 #if !TARGET_OS_TV
     case RNSScreenStackPresentationFormSheet:
