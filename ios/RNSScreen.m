@@ -99,11 +99,9 @@
 #else
       _controller.modalPresentationStyle = UIModalPresentationFullScreen;
 #endif
-      _controller.modalPresentationCapturesStatusBarAppearance = YES;
       break;
     case RNSScreenStackPresentationFullScreenModal:
       _controller.modalPresentationStyle = UIModalPresentationFullScreen;
-      _controller.modalPresentationCapturesStatusBarAppearance = YES;
       break;
 #if !TARGET_OS_TV
     case RNSScreenStackPresentationFormSheet:
@@ -123,6 +121,9 @@
       // ignored, we only need to keep in mind not to set presentation delegate
       break;
   }
+    
+  _controller.modalPresentationCapturesStatusBarAppearance = YES;
+
   // There is a bug in UIKit which causes retain loop when presentationController is accessed for a
   // controller that is not going to be presented modally. We therefore need to avoid setting the
   // delegate for screens presented using push. This also means that when controller is updated from
